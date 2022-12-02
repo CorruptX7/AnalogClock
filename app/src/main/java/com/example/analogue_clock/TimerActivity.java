@@ -1,25 +1,19 @@
 package com.example.analogue_clock;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class TimerActivity extends AppCompatActivity{
 
     ClockSurfaceView clock;
     TimerSurfaceView timer;
@@ -37,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 //        setContentView(clock);
 
         LinearLayout linearLayout = findViewById(R.id.surfaceView);
-        linearLayout.addView(clock);
+        linearLayout.addView(timer);
 
         clockBtn = findViewById(R.id.clock);
         timerBtn = findViewById(R.id.timer);
@@ -147,13 +141,13 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.item1:
-
+                Intent intent = new Intent(TimerActivity.this,
+                        MainActivity.class);
+                startActivity(intent);
                 break;
 
             case R.id.item2:
-                Intent intent = new Intent(MainActivity.this,
-                        TimerActivity.class);
-                startActivity(intent);
+
                 break;
         }
 
@@ -174,6 +168,4 @@ public class MainActivity extends AppCompatActivity {
         clock.onResumeClockSurfaceView();
         timer.onResumeTimerSurfaceView();
     }
-
-
 }
