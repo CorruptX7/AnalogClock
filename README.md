@@ -1,6 +1,6 @@
 # AnalogClock
 
-# Contribution
+## Contribution
 
 Created an analog clock using SurfaceView with hour, minutes, second and millisecond
 
@@ -13,7 +13,7 @@ Added buttons to change between clock and timer
 Added button options to change the colour of the analog clock/timer
 
 
-# Issues
+## Issues
 
 Millisecond hand not functioning properly
 
